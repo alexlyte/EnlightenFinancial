@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eudora Zhang – Financial Professional</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/nunito-sans@5/400.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/nunito-sans@5/600.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/nunito-sans@5/300.min.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f0f0f0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 2rem; font-family: 'Nunito Sans', sans-serif; }
+
+  .tfa-flyer { max-width: 580px; width: 100%; }
+
+  /* HEADER */
+  .tfa-header { background: #C8102E; padding: 2rem; border-radius: 12px 12px 0 0; display: flex; align-items: center; gap: 1.5rem; }
+
+  .photo-ring {
+    width: 90px; height: 90px; border-radius: 50%;
+    border: 3px solid #fff;
+    flex-shrink: 0; overflow: hidden;
+    background: rgba(255,255,255,0.15);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .photo-ring img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top; /* KEY FIX: anchors to the top so the face shows */
+    display: block;
+  }
+  .photo-ring .upload-hint {
+    color: rgba(255,255,255,0.85);
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.5;
+    padding: 6px;
+    pointer-events: none;
+  }
+  .photo-ring:hover { border-color: rgba(255,255,255,0.7); }
+
+  .header-text .eyebrow {
+    color: rgba(255,255,255,0.75);
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  .header-text h1 {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .header-text .title {
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .tagline-pill {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 20px;
+    padding: 4px 14px;
+  }
+  .tagline-pill span {
+    color: #fff;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  /* BODY */
+  .tfa-body {
+    background: #ffffff;
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    padding: 1.75rem 2rem;
+  }
+  .tfa-body p {
+    color: #222;
+    font-size: 15px;
+    line-height: 1.85;
+    font-weight: 400;
+  }
+
+  /* SERVICES */
+  .tfa-services {
+    background: #f9f9f9;
+    border: 1px solid #e8e8e8;
+    border-top: none;
+    padding: 1.25rem 2rem 1.5rem;
+  }
+  .services-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    color: #888;
+    margin-bottom: 0.9rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+  }
+  .svc-tag {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-left: 3px solid #C8102E;
+    border-radius: 0 6px 6px 0;
+    padding: 9px 14px;
+    font-size: 13px;
+    color: #1a1a1a;
+    font-weight: 400;
+  }
+
+  /* FOOTER */
+  .tfa-footer {
+    background: #1a1a1a;
+    border-radius: 0 0 12px 12px;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-cta {
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 300;
+  }
+  .footer-contact { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
+  .footer-phone { color: #fff; font-size: 13px; font-weight: 600; }
+  .footer-email {
+    color: #C8102E;
+    font-size: 12px;
+    background: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 400;
+  }
+</style>
+</head>
+<body>
+
+<div class="tfa-flyer">
+
+  <div class="tfa-header">
+    <div class="photo-ring" id="photoRing" title="Click to upload photo">
+      <span class="upload-hint" id="uploadHint">Click to<br>add photo</span>
+      <input type="file" id="photoInput" accept="image/*" style="display:none;">
+    </div>
+
+    <div class="header-text">
+      <p class="eyebrow">TRANSAMERICA FINANCIAL ADVISORS</p>
+      <h1>Eudora Zhang</h1>
+      <p class="title">Financial Professional</p>
+      <div class="tagline-pill"><span>Financial clarity for every family</span></div>
+    </div>
+  </div>
+
+  <div class="tfa-body">
+    <p>Eudora Zhang is a registered financial professional serving families and small business owners across the DC area — helping them protect what matters most, build long-term wealth, and create lasting legacies. Independent and appointed with 180+ A/A+ rated financial institutions, she offers complimentary consultations with no agenda but yours.</p>
+  </div>
+
+  <div class="tfa-services">
+    <p class="services-label">SERVICES</p>
+    <div class="services-grid">
+      <div class="svc-tag">Life Insurance</div>
+      <div class="svc-tag">Health Coverage</div>
+      <div class="svc-tag">Kids Education</div>
+      <div class="svc-tag">Retirement Planning</div>
+      <div class="svc-tag">Medicare/Medicaid</div>
+      <div class="svc-tag">Long-Term Care</div>
+    </div>
+  </div>
+
+  <div class="tfa-footer">
+    <p class="footer-cta">Schedule your complimentary consultation today</p>
+    <div class="footer-contact">
+      <span class="footer-phone">(410) 599-7907</span>
+      <span class="footer-email">lyteenterprises@gmail.com</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const ring = document.getElementById('photoRing');
+  const input = document.getElementById('photoInput');
+  const hint = document.getElementById('uploadHint');
+
+  ring.addEventListener('click', () => input.click());
+
+  input.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      hint.style.display = 'none';
+      let img = ring.querySelector('img');
+      if (!img) {
+        img = document.createElement('img');
+        ring.appendChild(img);
+      }
+      img.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+</script>
+
+</body>
+</html>
